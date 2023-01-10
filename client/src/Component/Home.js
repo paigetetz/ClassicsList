@@ -1,9 +1,10 @@
 import React from 'react';
-
-function Home(props) {
+import BookContainer from './BookContainer';
+function Home({books}) {
     return (
         <div>
-            
+        <BookContainer books = {books}/>
+
         </div>
     );
 }

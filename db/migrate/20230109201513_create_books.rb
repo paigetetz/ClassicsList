@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :genre
       t.string :published
       t.integer :rating
-      t.string :image
+      t.string :image_url
 
       t.timestamps
     end

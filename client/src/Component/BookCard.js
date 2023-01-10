@@ -1,9 +1,9 @@
 import React from 'react';
 
-function BookCard(props) {
+function BookCard({book}) {
     return (
         <div>
-            
+            <img src={book.image_url} alt = {book.title}/>
         </div>
     );
 }

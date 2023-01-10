@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2023_01_09_201520) do
     t.string "genre"
     t.string "published"
     t.integer "rating"
-    t.string "image"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
