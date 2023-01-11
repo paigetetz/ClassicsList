@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :reviews, only: [:index, :show, :create, :update, :destroy]
   resources :books, only: [:index, :show]
+  
 
   
   post '/signup', to: 'users#create'

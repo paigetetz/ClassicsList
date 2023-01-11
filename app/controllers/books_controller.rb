@@ -4,14 +4,23 @@ class BooksController < ApplicationController
         render json: Book.all
     end
 
-    def create
-        book = Book.create(book_params)
-            if book.valid?
-                render json: book, status: :created
+    def show
+        book = Book.find_by_id(params[:id])
+            if book
+                render json: book
             else
-                render json: {error: book.errors.full_messages}, status: :unprocessable_entity
+                render json: { error: "Book not found" }, status: :not_found
             end
     end
+
+    # def create
+    #     book = Book.create(book_params)
+    #         if book.valid?
+    #             render json: book, status: :created
+    #         else
+    #             render json: {error: book.errors.full_messages}, status: :unprocessable_entity
+    #         end
+    # end
 
 
     private
