@@ -106,7 +106,7 @@ function Signup({onSignUp}) {
                         type="text"
                         id="fav_genre"
                         value={fav_genre}
-                        onChange={(e) => setFavBook(e.target.value)}
+                        onChange={(e) => setFavGenre(e.target.value)}
                     />
                 
             
