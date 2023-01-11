@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     def show
         book = Book.find_by_id(params[:id])
             if book
-                render json: book
+                render json: book, serializer: BookReviewShowSerializer
             else
                 render json: { error: "Book not found" }, status: :not_found
             end
