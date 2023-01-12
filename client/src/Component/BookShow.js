@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-
-
+import ReviewCard from './ReviewCard'
 function BookShow(props) {
     const [book, setBook] = useState([]);
     const {id} = useParams();
-
     useEffect(() => {
         fetch(`/books/${id}`)
         .then((response) => response.json())
@@ -13,6 +11,18 @@ function BookShow(props) {
             setBook({...data});
         })
     },[id]);
+    // console.log(book.reviews);
+        const reviews = book.reviews;
+        console.log(reviews);
+        function renderReviews(reviews) {
+            if(reviews) {
+                return reviews.map(review => <ReviewCard key={review.id} review={review} />)
+            }
+            else 
+                return <div></div>
+        }
+            
+        
 
     return (
         <div>
@@ -24,10 +34,11 @@ function BookShow(props) {
             <h5>{book.published}</h5>
             <h5>{book.page_count}</h5>
             <p>{book.summary}</p>
-
+            <div className='review-card-container'>
+                {renderReviews(reviews)}
+            </div>
             
         </div>
     );
 }
-
 export default BookShow;
