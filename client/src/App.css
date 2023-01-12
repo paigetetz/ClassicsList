@@ -4,12 +4,27 @@ body {
 
 /* LANDING PAGE */
 
+.landing{
+  display: flex;
+  flex-direction: row;
+
+
+}
+.landing-container{
+  height: auto;
+  width: 100%;
+  background-color: #C49D7D;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 .landing-btn {
-  float: right;
+  
   display: inline-block;
-  height: 50px;
+  height: 100px;
   width: 176px;
-  margin: 0 40px 0 16px;
+  margin: 20%;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
@@ -26,6 +41,95 @@ body {
 .landing-btn button:hover {
   background-color: #C49D7D;
 }
+
+/* LOGIN FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #5F8575;
+  color: #F6F1EA;
+}
+
+/* Form input fields */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #F6F1EA;
+}
+/* Form submit button */
+.login-btn{
+  width: 30%;
+  background-color: #F6F1EA;
+  color: #5F8575;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Form submit button on hover */
+.login-btn:hover {
+  background-color: #C49D7D;
+}
+
+/* SIGN UP FORM */
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #5F8575;
+  color: #F6F1EA;
+}
+
+/* Form input fields */
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="password"],
+.signup-form input[type="text"]
+.signup-form input[type="text"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #F6F1EA;
+}
+
+.signup-btn{
+  width: 30%;
+  background-color: #F6F1EA;
+  color: #5F8575;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Form submit button on hover */
+.signup-btn:hover {
+  background-color: #C49D7D;
+}
+
 /* BOOK CARDS */
 .book-container{
   display: flex;

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function LandingPage() {
     return (
-        <div>
+        <div className='landing'>
             <img className= 'logo' src={Logo} alt="Classics List" />
-            <div className="container">
+            <div className="landing-container">
                 <Link to="/login">
                 <button className='landing-btn'>Login</button>
                 </Link>
