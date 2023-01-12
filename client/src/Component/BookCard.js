@@ -19,7 +19,7 @@ function BookCard({book}) {
                         <p>{book.short}</p>
                         
                     </div>
-                    <div class="product-price-btn">
+                    <div className="product-price-btn">
                         <p>{book.rating}/5</p>
                         <Link to = {`/book/${book.id}`}>
                         <button type="button">More Info</button>
