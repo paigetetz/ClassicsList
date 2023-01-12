@@ -1,6 +1,31 @@
 body {
   background-color: #F6F1EA;
 }
+
+/* LANDING PAGE */
+
+.landing-btn {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #F6F1EA;
+  background-color: #5F8575;
+  cursor: pointer;
+  outline: none;
+}
+.landing-btn button:hover {
+  background-color: #C49D7D;
+}
 /* BOOK CARDS */
 .book-container{
   display: flex;

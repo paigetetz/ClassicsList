@@ -1,11 +1,19 @@
 import React from 'react';
-import Login from './Login';
-import Signup from './Signup';
-function LandingPage({setUser}) {
+import Logo from './Logo.png';
+import { Link } from 'react-router-dom';
+
+function LandingPage() {
     return (
         <div>
-            <Login onLogin= {setUser}/>
-            <Signup onSignUp = {setUser}/>
+            <img className= 'logo' src={Logo} alt="Classics List" />
+            <div className="container">
+                <Link to="/login">
+                <button className='landing-btn'>Login</button>
+                </Link>
+                <Link to="/signup">
+                <button className='landing-btn'>Sign up</button>
+                </Link>
+            </div>
         </div>
     );
 }
