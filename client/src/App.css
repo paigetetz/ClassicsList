@@ -1,5 +1,6 @@
 body {
   background-color: #F6F1EA;
+  font-family: "Montserrat", sans-serif
 }
 
 /* LANDING PAGE */
@@ -128,6 +129,34 @@ body {
 /* Form submit button on hover */
 .signup-btn:hover {
   background-color: #C49D7D;
+}
+
+/* NAVIGATION BAR */
+.profile_pic {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  
+}
+.profile_container {
+  display: flex;
+  margin-left: 80%;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 2%;
+}
+
+.profile_greeting {
+  font-family: "Montserrat", sans-serif;
+  color: #5F8575;
+  text-decoration: none;
+  font-size: .6em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block-right;
+  width: 80px;
+  margin: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 /* BOOK CARDS */
