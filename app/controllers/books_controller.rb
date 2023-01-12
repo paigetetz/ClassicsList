@@ -13,14 +13,14 @@ class BooksController < ApplicationController
             end
     end
 
-    # def create
-    #     book = Book.create(book_params)
-    #         if book.valid?
-    #             render json: book, status: :created
-    #         else
-    #             render json: {error: book.errors.full_messages}, status: :unprocessable_entity
-    #         end
-    # end
+    def create
+        book = Book.create(book_params)
+            if book.valid?
+                render json: book, status: :created
+            else
+                render json: {error: book.errors.full_messages}, status: :unprocessable_entity
+            end
+    end
 
 
     private

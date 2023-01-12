@@ -6,7 +6,6 @@ import LandingPage from './Component/LandingPage';
 import Signup from './Component/Signup';
 import Login from './Component/Login';
 import BookShow from './Component/BookShow';
-import CreateReviewForm from './Component/CreateReviewForm';
 import Profile from './Component/Profile';
 import ReviewShow from './Component/ReviewShow';
 import Logout from './Component/Logout';
@@ -38,8 +37,7 @@ function App() {
         <Route path='/logout' element={<Logout user={user} setUser={setUser}/>}/>
         <Route path="profile" element={<Profile user={user}/>}/>
         <Route path="/home" element={<Home books = {books}/>}/>
-        <Route path="/book/:id" element={<BookShow/>}/>
-        <Route path="/create-review" element={<CreateReviewForm/>}/>
+        <Route path="/book/:id" element={<BookShow user={user}/>}/>
         <Route path="/review/:id" element={<ReviewShow/>}/>
       </Routes>
     </div>
