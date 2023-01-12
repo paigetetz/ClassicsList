@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2023_01_09_201520) do
     t.string "title"
     t.string "author"
     t.string "summary"
+    t.string "short"
     t.string "page_count"
     t.string "genre"
     t.string "published"

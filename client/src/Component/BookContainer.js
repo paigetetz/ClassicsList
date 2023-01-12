@@ -2,7 +2,7 @@ import React from 'react';
 import BookCard from './BookCard';
 function BookContainer({books}) {
     return (
-        <div>
+        <div className='book-container'>
             {
                 books.map(book => <BookCard key={book.id} book={book} />)
             }

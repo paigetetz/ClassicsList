@@ -30,12 +30,12 @@ function App() {
     <div className="App">
       <Navigation/>
       <Routes>
-        <Route path="/" element={<LandingPage setUser = {setUser}/>}/>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/login" element={<Login />}/>
+        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/signup" element={<Signup onSignUp={setUser}/>}/>
+        <Route path="/login" element={<Login onLogin={setUser}/>}/>
 
         <Route path="/home" element={<Home books = {books}/>}/>
-        <Route path="/books/:id" element={<BookShow/>}/>
+        <Route path="/book/:id" element={<BookShow/>}/>
         <Route path="/create-review" element={<CreateReviewForm/>}/>
         <Route path="/review/:id" element={<ReviewShow/>}/>
       </Routes>
