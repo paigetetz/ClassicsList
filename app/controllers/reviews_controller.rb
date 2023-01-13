@@ -22,14 +22,14 @@ class ReviewsController < ApplicationController
             end
     end
 
-    def update
+    def update 
         review = Review.find_by_id(params[:id])
-            if review
-                review.update(review_update_params)
-                render json: review, status: :ok
-            else
-                render json: {error: "Review not found"}, status: :not_found
-            end
+        if review
+            review.update(likes)
+            render json: review
+        else
+            render json: {error: 'Review not found'}, status: :not_found
+        end
     end
 
     def destroy
@@ -50,6 +50,10 @@ class ReviewsController < ApplicationController
 
     def review_update_params
         params.permit(:headline, :commentary, :rating, :user_id, :review_id)
+    end
+
+    def likes
+        params.permit(:likes)
     end
 
 end

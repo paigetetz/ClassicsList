@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 function ReviewCard({review}) {
     // const fullReview = review.commentary
     // const summary = fullReview.substring(0, 50) + "...";
     // const averageRating = review.rating.all/ review.length
     // console.log(averageRating)
+
+    const [reviewData, setReviewData] = useState({review});
+    function likeButton() {  
+        fetch(`reviews/${review.id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ likes: ++review.likes }),
+        }).then((r) =>r.json())
+        .then(((data)=>{
+            setReviewData({...data})
+        }))
+    }
     
+
+    
+
     return (
         <div className='review-card'>
             <h2>{review.headline}</h2>

@@ -6,15 +6,15 @@ function ReviewShow(props) {
         useEffect(() => {
             fetch(`/reviews/${id}`)
             .then(res => res.json())
-            .then((data) => {
-                setReview({...data});
+            .then((review) => {
+                setReview({...review});
             })
         },[id])
-            console.log(review)
+            console.log()
 
     return (
         <div>
-            {/* <h3>{review.headline}</h3> */}
+        {/* <button onClick={likeButton}>Like</button> */}
         </div>
     );
 }
