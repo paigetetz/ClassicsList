@@ -4,31 +4,33 @@ import { useParams } from 'react-router-dom';
 function CreateReviewForm({book, setBook, user}) {
 
     let initial = {
-        title: "",
-        review: "",
+        headline: "",
+        commentary: "",
         rating: ""
     }
 
     const [form, setForm] = useState(initial);
     const {id} = useParams();
+    // const [reviews, setReviews] = useState([]);
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const newReview = {
             user_id: user.id,
             book_id: id,
-            title: form.headline,
-            review: form.commentary,
+            headline: form.headline,
+            commentary: form.commentary,
             rating: form.rating
         }
 
-        fetch(`/book/${id}`, {
+        fetch(`/books/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newReview)
         }).then(response => response.json())
             .then(data => {
                 setForm(initial)
-                setBook({...book, posts:[...book.reviews, data]})
+                setBook({...book, reviews: [...book.reviews, data]} )
         
             })
     }
@@ -49,10 +51,10 @@ function CreateReviewForm({book, setBook, user}) {
             <form id="form" onSubmit={handleSubmit}>
 
                 <label>Title</label>
-                <input className="input_field" value={form.headline} placeholder="" name="title" type="text" onChange={handleChange}/>
+                <input className="input_field" value={form.headline} placeholder="" name="headline" type="text" onChange={handleChange}/>
 
                 <label>Review</label>
-                <input className="input_field" value={form.commentary} placeholder="" name="review" type="text" onChange={handleChange}/>
+                <input className="input_field" value={form.commentary} placeholder="" name="commentary" type="text" onChange={handleChange}/>
 
                 <label>Rating</label>
                 <input className="input_field" value={form.rating} placeholder="" name="rating" type="text" onChange={handleChange}/>

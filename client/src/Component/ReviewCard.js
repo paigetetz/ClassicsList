@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 function ReviewCard({review}) {
-    const fullReview = review.commentary
-    const summary = fullReview.substring(0, 50) + "...";
+    // const fullReview = review.commentary
+    // const summary = fullReview.substring(0, 50) + "...";
     // const averageRating = review.rating.all/ review.length
     // console.log(averageRating)
     
@@ -14,7 +14,7 @@ function ReviewCard({review}) {
             <br></br>
             <h6>By: {review.user_id}</h6>
             <br></br>
-            <p>{summary}</p>
+            <h6>{review.likes} Likes</h6>
             <Link to={`/review/${review.id}`}>
             <p>Continue?</p>
             </Link>

@@ -45,11 +45,11 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.permit(:user_id, :book_id, :headline, :commentary, :rating, :likes)
+        params.permit(:user_id, :book_id, :headline, :commentary, :rating)
     end
 
     def review_update_params
-        params.permit(:headline, :commentary, :rating)
+        params.permit(:headline, :commentary, :rating, :user_id, :review_id)
     end
 
 end
