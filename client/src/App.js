@@ -6,8 +6,9 @@ import LandingPage from './Component/LandingPage';
 import Signup from './Component/Signup';
 import Login from './Component/Login';
 import BookShow from './Component/BookShow';
-import CreateReviewForm from './Component/CreateReviewForm';
-import ReviewShow from './Component/ReviewShow';
+import Profile from './Component/Profile';
+
+import Logout from './Component/Logout';
 import {Route, Routes} from 'react-router-dom';
 function App() {
   const [books, setBooks] = useState([])
@@ -28,16 +29,16 @@ function App() {
   // console.log(books)
   return (
     <div className="App">
-      <Navigation/>
+      <Navigation user={user}/>
       <Routes>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/signup" element={<Signup onSignUp={setUser}/>}/>
         <Route path="/login" element={<Login onLogin={setUser}/>}/>
-
+        <Route path='/logout' element={<Logout user={user} setUser={setUser}/>}/>
+        <Route path="profile" element={<Profile user={user}/>}/>
         <Route path="/home" element={<Home books = {books}/>}/>
-        <Route path="/book/:id" element={<BookShow/>}/>
-        <Route path="/create-review" element={<CreateReviewForm/>}/>
-        <Route path="/review/:id" element={<ReviewShow/>}/>
+        <Route path="/book/:id" element={<BookShow user={user}/>}/>
+        
       </Routes>
     </div>
   );

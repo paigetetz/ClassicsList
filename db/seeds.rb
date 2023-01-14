@@ -22,7 +22,7 @@ puts "Seeding random users"
 15.times do 
     User.create(
         username: Faker::Internet.user_name,
-        password_digest: 1234,
+        password: "1234",
         profile_pic: Faker::Avatar.image,
         fav_book: Faker::Book.title,
         fav_genre: Faker::Book.genre

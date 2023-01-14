@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ReviewCard from './ReviewCard'
-function BookShow(props) {
+import CreateReviewForm from './CreateReviewForm'
+function BookShow({user}) {
     const [book, setBook] = useState([]);
     const {id} = useParams();
     useEffect(() => {
@@ -16,7 +17,7 @@ function BookShow(props) {
         console.log(reviews);
         function renderReviews(reviews) {
             if(reviews) {
-                return reviews.map(review => <ReviewCard key={review.id} review={review} />)
+                return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book}/>)
             }
             else 
                 return <div></div>
@@ -35,6 +36,7 @@ function BookShow(props) {
             <h5>{book.page_count}</h5>
             <p>{book.summary}</p>
             <div className='review-card-container'>
+                <CreateReviewForm book={book} setBook={setBook} user={user}/>
                 {renderReviews(reviews)}
             </div>
             
