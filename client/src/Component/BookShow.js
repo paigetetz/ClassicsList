@@ -17,7 +17,7 @@ function BookShow({user}) {
         console.log(reviews);
         function renderReviews(reviews) {
             if(reviews) {
-                return reviews.map(review => <ReviewCard key={review.id} review={review} />)
+                return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book}/>)
             }
             else 
                 return <div></div>

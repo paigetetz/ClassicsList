@@ -8,7 +8,7 @@ function ReviewCard({review}) {
 
     const [reviewData, setReviewData] = useState({review});
     function likeButton() {  
-        fetch(`reviews/${review.id}`, {
+        fetch(`/reviews/${review.id}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
@@ -33,9 +33,8 @@ function ReviewCard({review}) {
             <h6>By: {review.user_id}</h6>
             <br></br>
             <h6>{review.likes} Likes</h6>
-            <Link to={`/review/${review.id}`}>
-            <p>Continue?</p>
-            </Link>
+            <button onClick={likeButton}>Like</button>
+            
         </div>
     );
 }
