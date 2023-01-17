@@ -6,20 +6,24 @@ class ReviewsController < ApplicationController
 
     def show
         review = Review.find_by_id(params[:id])
-            if review
-                render json: review
-            else
-                render json: {error: "Review not found"}, status: :not_found
-            end
+        if review
+            render json: review
+        else
+            render json: {error: "Review not found"}, status: :not_found
+        end
     end
 
     def create
         review = Review.create(review_params)
-            if review.valid?
-                render json: review, status: :created
-            else
-                render json: {error: review.errors.full_messages}, status: :unprocessable_entity
-            end
+        if review.valid?
+            puts "###########################"
+            puts review.id
+            render json: review, status: :created
+            
+        else
+        
+            render json: {error: review.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def update 
@@ -33,13 +37,15 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        review = Review.find_by_id(params[:id])
-            if review
-                review.destroy
-                head :no_content
-            else
-                render json: {error: "Review not found"}, status: :not_found
-            end
+        # byebug
+        review = Review.find(params[:id])
+        if review
+            review.destroy
+            head :no_content
+        else
+            render json: { errors: 'Review not found' }, status: :not_found
+        end
+
     end
 
     private

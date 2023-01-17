@@ -4,7 +4,9 @@ import ReviewCard from './ReviewCard'
 import CreateReviewForm from './CreateReviewForm'
 function BookShow({user}) {
     const [book, setBook] = useState([]);
+
     const {id} = useParams();
+
     useEffect(() => {
         fetch(`/books/${id}`)
         .then((response) => response.json())
@@ -13,15 +15,22 @@ function BookShow({user}) {
         })
     },[id]);
     // console.log(book.reviews);
-        const reviews = book.reviews;
-        console.log(reviews);
-        function renderReviews(reviews) {
-            if(reviews) {
-                return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book}/>)
-            }
-            else 
-                return <div></div>
+    const reviews = book.reviews;
+    console.log(reviews);
+
+    function handleDelete(id) {
+        const updateReviewArray = book.reviews.filter(review => review.id !== id)
+        setBook({...book, reviews: updateReviewArray})
+    }
+    console.log(book.reviews);
+    
+    function renderReviews(reviews) {
+        if(reviews) {
+            return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book} handleDelete = {handleDelete} user = {user}/>)
         }
+        else 
+            return <div></div>
+    }
             
         
 
@@ -36,7 +45,7 @@ function BookShow({user}) {
             <h5>{book.page_count}</h5>
             <p>{book.summary}</p>
             <div className='review-card-container'>
-                <CreateReviewForm book={book} setBook={setBook} user={user}/>
+                <CreateReviewForm book={book} setBook={setBook} user={user} />
                 {renderReviews(reviews)}
             </div>
             

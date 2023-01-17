@@ -17,7 +17,7 @@ function CreateReviewForm({book, setBook, user}) {
         e.preventDefault()
         const newReview = {
             user_id: user.id,
-            book_id: id,
+            book_id: book.id,
             headline: form.headline,
             commentary: form.commentary,
             rating: form.rating
