@@ -15,21 +15,22 @@ function BookShow({user}) {
         })
     },[id]);
     // console.log(book.reviews);
-        const reviews = book.reviews;
-        console.log(reviews);
+    const reviews = book.reviews;
+    console.log(reviews);
 
-        function handleDelete(id) {
-            const updateReviewArray = book.reviews.filter(review => review.id !== id)
-            setBook({...book, reviews: updateReviewArray})
+    function handleDelete(id) {
+        const updateReviewArray = book.reviews.filter(review => review.id !== id)
+        setBook({...book, reviews: updateReviewArray})
+    }
+    console.log(book.reviews);
+    
+    function renderReviews(reviews) {
+        if(reviews) {
+            return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book} handleDelete = {handleDelete} user = {user}/>)
         }
-        
-        function renderReviews(reviews) {
-            if(reviews) {
-                return reviews.map(review => <ReviewCard key={review.id} review={review} book= {book} handleDelete = {handleDelete} id={id}/>)
-            }
-            else 
-                return <div></div>
-        }
+        else 
+            return <div></div>
+    }
             
         
 

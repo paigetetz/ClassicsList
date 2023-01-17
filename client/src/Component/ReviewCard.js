@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-function ReviewCard({review, handleDelete}) {
+// import { Link } from 'react-router-dom';
+function ReviewCard({review, handleDelete, user}) {
     // const fullReview = review.commentary
     // const summary = fullReview.substring(0, 50) + "...";
     // const averageRating = review.rating.all/ review.length
@@ -21,30 +21,27 @@ function ReviewCard({review, handleDelete}) {
             setReviewData({...data})
         }))
     }
-
-    function deleteButton(id, userId) {
-        const handleDelete = async (id) => {
-            try {
-                const response = await fetch(`/reviews/${id}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                        // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                });
-                const data = await response.json();
-                if (data.user_id === userId) {
-                    // update state to remove the deleted review
-                } else {
-                    // display an error message to the user
-                }
-            } catch (error) {
-                console.log(error);
+    function deleteButton(id) {
+        console.log(id)
+        // debugger
+        fetch(`/reviews/${review.id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
+        })
+        const currentUserID = user.id;
+        if (currentUserID === review.user_id) {
+            return (
+                <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
+            );
+        } else {
+            return <div></div>;
         }
-        handleDelete(id);
     }
+    
+    
 
     
 
@@ -60,7 +57,7 @@ function ReviewCard({review, handleDelete}) {
             <br></br>
             <h6>{review.likes} Likes</h6>
             <button onClick={likeButton}>Like</button>
-            <button onClick={() => deleteButton(review.id, review.user_id)}>Delete</button>
+            <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
             
         </div>
     );
