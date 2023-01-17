@@ -22,19 +22,19 @@ function ReviewCard({review, handleDelete, user}) {
         }))
     }
     function deleteButton(id) {
-        console.log(id)
-        // debugger
+        handleDelete(id)
         fetch(`/reviews/${review.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
+            
         })
         const currentUserID = user.id;
         if (currentUserID === review.user_id) {
             return (
-                <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
+                <button className="delete" onClick={() => deleteButton(review.id)}>Delete</button>
             );
         } else {
             return <div></div>;
@@ -57,7 +57,7 @@ function ReviewCard({review, handleDelete, user}) {
             <br></br>
             <h6>{review.likes} Likes</h6>
             <button onClick={likeButton}>Like</button>
-            <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
+            <button className="delete" onClick={() => deleteButton(review.id)}>Delete</button>
             
         </div>
     );
