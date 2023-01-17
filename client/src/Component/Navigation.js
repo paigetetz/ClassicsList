@@ -8,7 +8,6 @@ function Navigation({user}) {
                 <div className='nav-bar'>
                     <div>
                         <NavLink exact to='/home'>Home</NavLink>
-                        <NavLink to='/create-review'>Create Review</NavLink>
                         <NavLink to='/profile'>My Profile</NavLink>
                         <NavLink to='/logout'>Logout</NavLink>
                     </div>
