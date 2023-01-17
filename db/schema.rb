@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2023_01_09_201520) do
     t.integer "book_id"
     t.string "headline"
     t.string "commentary"
-    t.string "rating"
+    t.integer "rating"
     t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
