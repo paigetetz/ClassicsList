@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 // import { Link } from 'react-router-dom';
 function ReviewCard({review, handleDelete, user}) {
-    // const fullReview = review.commentary
-    // const summary = fullReview.substring(0, 50) + "...";
-    // const averageRating = review.rating.all/ review.length
-    // console.log(averageRating)
 
     const [reviewData, setReviewData] = useState({review});
 
+    
+    // console.log(review.user.username)
     function likeButton() {  
         fetch(`/reviews/${review.id}`, {
             method: "PATCH",
@@ -22,23 +20,24 @@ function ReviewCard({review, handleDelete, user}) {
         }))
     }
     function deleteButton(id) {
-        console.log(id)
-        // debugger
+        handleDelete(id)
         fetch(`/reviews/${review.id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
+            
         })
-        const currentUserID = user.id;
-        if (currentUserID === review.user_id) {
-            return (
-                <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
-            );
-        } else {
-            return <div></div>;
-        }
+    
+        // const currentUserID = user.id;
+        // if (currentUserID === review.user_id) {
+        //     return (
+        //         <button className="delete" onClick={() => deleteButton(review.id)}>Delete</button>
+        //     );
+        // } else {
+        //     return <div></div>;
+        // }
     }
     
     
@@ -57,7 +56,7 @@ function ReviewCard({review, handleDelete, user}) {
             <br></br>
             <h6>{review.likes} Likes</h6>
             <button onClick={likeButton}>Like</button>
-            <button className="delete" onClick={() => handleDelete(review.id)}>Delete</button>
+            <button className="delete" onClick={() => deleteButton(review.id)}>Delete</button>
             
         </div>
     );

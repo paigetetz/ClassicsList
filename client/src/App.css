@@ -158,6 +158,14 @@ body {
   margin: 15px;
   transition: all 0.2s ease-in-out;
 }
+.nav-bar{
+  display: flex;
+  flex-direction: row;
+  background-color: #5F8575;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 
 /* BOOK CARDS */
 .book-container{

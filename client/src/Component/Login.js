@@ -69,9 +69,9 @@ function Login({onLogin }) {
                 <Link to='/signup'>
                 <h5>Need an account? Sign up here!</h5>
                 </Link>
-                {errors.map((err) => (
+                {/* {errors.map((err) => (
                     <error key={err}>{err}</error>
-                ))}
+                ))} */}
 
             </form>
     </div>

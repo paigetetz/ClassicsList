@@ -1,25 +1,38 @@
 import ReviewCard from './ReviewCard.js';
+import React, {useEffect, useState} from'react';
+function Profile() {
 
-function Profile({user}) {
-    // const myReviews = user.reviews
-    // console.log(myReviews)
+    const [user, setUser] = useState({reviews:[]});
 
-    const reviews = user.reviews;
-    console.log(reviews);
-    function renderReviews(reviews) {
-        if(reviews) {
-            return reviews.map(review => <ReviewCard key={review.id} review={review} />)
+useEffect(() => {
+    fetch('/me')
+        .then(res => res.json())
+        .then(user => setUser(user))
+        .catch(error => console.log(error))
+}, []);
+
+    const myReviews = user.reviews
+    console.log(myReviews)
+
+    function renderReviews() {
+        if(myReviews.length > 0) {
+            return myReviews.map(review => <ReviewCard key={review.id} review={review} />)
         }
         else 
-            return <div></div>
+            return <h3>No Reviews Yet!</h3>
     }
     return (
         <div className='profile'>
+            <div className='userContainer'>
             <h1>Hello, {user.username}</h1>
             <img className='profile-image' src={user.profile_pic} alt={user.username}/>
             <h3>Favorite Book: {user.fav_book}</h3>
             <h3>Favorite Genre: {user.fav_genre}</h3>
-            {/* {renderReviews(reviews)} */}
+            </div>
+            <div className='myReviews'>
+                {renderReviews()}
+            </div>
+            
         </div>
     );
 }

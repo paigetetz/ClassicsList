@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.integer :book_id
       t.string :headline
       t.string :commentary
-      t.string :rating
+      t.integer :rating
       t.integer :likes
 
       t.timestamps
