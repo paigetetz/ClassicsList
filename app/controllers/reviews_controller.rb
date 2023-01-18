@@ -16,8 +16,6 @@ class ReviewsController < ApplicationController
     def create
         review = Review.create(review_params)
         if review.valid?
-            puts "###########################"
-            puts review.id
             render json: review, status: :created
             
         else
@@ -37,7 +35,6 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        # byebug
         review = Review.find(params[:id])
         if review
             review.destroy
