@@ -4,4 +4,11 @@ class Review < ApplicationRecord
 
     validates :headline, :commentary, :rating, presence: true
     
+    def username
+        self.user.username
+    end
+
+    def book_info
+        "#{self.book.title} by #{self.book.author} "
+    end
 end

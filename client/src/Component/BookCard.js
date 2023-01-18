@@ -17,7 +17,7 @@ function BookCard({ book }) {
 						<p>{book.short}</p>
 					</div>
 					<div className="product-price-btn">
-						<p>{book.rating}/5</p>
+						<p>{book.average_review}/5</p>
 						<Link to={`/book/${book.id}`}>
 							<button type="button">More Info</button>
 						</Link>
