@@ -5,5 +5,9 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: true
     validates :username, :fav_book, :fav_genre, presence: true
+
+    def read_books
+        self.books
+    end
 end
 
