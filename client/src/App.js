@@ -38,7 +38,7 @@ function App() {
 					path="/logout"
 					element={<Logout user={user} setUser={setUser} />}
 				/>
-				<Route path="profile" element={<Profile user={user} />} />
+				<Route path="/profile" element={<Profile />} />
 				<Route path="/home" element={<Home books={books} />} />
 				<Route path="/book/:id" element={<BookShow user={user} />} />
 			</Routes>

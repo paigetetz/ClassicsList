@@ -1,7 +1,8 @@
 import ReviewCard from './ReviewCard.js';
+import BookCard from './BookCard.js';
 import React, { useEffect, useState } from 'react';
 function Profile() {
-	const [user, setUser] = useState({ reviews: [] });
+	const [user, setUser] = useState({ reviews: [], books: [] });
 
 	useEffect(() => {
 		fetch('/me')
@@ -9,9 +10,18 @@ function Profile() {
 			.then((user) => setUser(user))
 			.catch((error) => console.log(error));
 	}, []);
+	const myBooks = user.books;
+	console.log(myBooks);
+
+	function renderBooks() {
+		if (myBooks.length > 0) {
+			return myBooks.map((book) => {
+				return <BookCard key={book.id} book={book} />;
+			});
+		} else return <h3>No Books Yet!</h3>;
+	}
 
 	const myReviews = user.reviews;
-	console.log(myReviews);
 
 	function renderReviews() {
 		if (myReviews.length > 0) {
@@ -20,6 +30,7 @@ function Profile() {
 			));
 		} else return <h3>No Reviews Yet!</h3>;
 	}
+
 	return (
 		<div className="profile">
 			<div className="userContainer">
@@ -32,6 +43,7 @@ function Profile() {
 				<h3>Favorite Book: {user.fav_book}</h3>
 				<h3>Favorite Genre: {user.fav_genre}</h3>
 			</div>
+			<div className="myBooks">{renderBooks()}</div>
 			<div className="myReviews">{renderReviews()}</div>
 		</div>
 	);
