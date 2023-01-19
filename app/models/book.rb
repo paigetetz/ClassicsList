@@ -3,7 +3,8 @@ class Book < ApplicationRecord
     has_many :users, through: :reviews
 
     def average_review
-        self.reviews.map{|review| review.rating}.reduce(:+).to_f / reviews.count
+        average = self.reviews.map{|review| review.rating}.reduce(:+).to_f / reviews.count
+        average.round(2)
     end
     
 end
