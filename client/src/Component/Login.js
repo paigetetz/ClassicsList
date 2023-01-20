@@ -37,38 +37,38 @@ function Login({ onLogin }) {
 	}
 
 	return (
-		<div className="login-container">
+		<div className='login-container'>
 			<h1>Login</h1>
-			<form className="login-form" onSubmit={handleSubmit}>
-				<label htmlFor="username">Username</label>
+			<form className='login-form' onSubmit={handleSubmit}>
+				<label htmlFor='username'>Username</label>
 				<input
-					className="username"
-					type="text"
-					id="username"
-					autoComplete="off"
+					className='username'
+					type='text'
+					id='username'
+					autoComplete='off'
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
 				/>
 
-				<label htmlFor="password">Password</label>
+				<label htmlFor='password'>Password</label>
 				<input
-					className="password"
-					type="password"
-					id="password"
-					autoComplete="current-password"
+					className='password'
+					type='password'
+					id='password'
+					autoComplete='current-password'
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
 
 				<button
-					className="login-btn"
-					variant="fill"
-					color="primary"
-					type="submit"
+					className='login-btn'
+					variant='fill'
+					color='primary'
+					type='submit'
 				>
 					{isLoading ? 'Loading...' : 'Login'}
 				</button>
-				<Link to="/signup">
+				<Link to='/signup'>
 					<h5>Need an account? Sign up here!</h5>
 				</Link>
 				{/* {errors.map((err) => (

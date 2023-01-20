@@ -32,19 +32,19 @@ function Profile() {
 	}
 
 	return (
-		<div className="profile">
-			<div className="userContainer">
+		<div className='profile'>
+			<div className='userContainer'>
 				<h1>Hello, {user.username}</h1>
 				<img
-					className="profile-image"
+					className='profile-image'
 					src={user.profile_pic}
 					alt={user.username}
 				/>
 				<h3>Favorite Book: {user.fav_book}</h3>
 				<h3>Favorite Genre: {user.fav_genre}</h3>
 			</div>
-			<div className="myBooks">{renderBooks()}</div>
-			<div className="myReviews">{renderReviews()}</div>
+			<div className='myBooks'>{renderBooks()}</div>
+			<div className='myReviews'>{renderReviews()}</div>
 		</div>
 	);
 }

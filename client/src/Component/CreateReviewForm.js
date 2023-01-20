@@ -44,38 +44,38 @@ function CreateReviewForm({ book, setBook, user }) {
 
 	return (
 		<div>
-			<form className="review-form" onSubmit={handleSubmit}>
+			<form className='review-form' onSubmit={handleSubmit}>
 				<label>Title</label>
 				<textarea
-					className="input_field"
+					className='input_field'
 					value={form.headline}
-					placeholder=""
-					name="headline"
-					type="text"
+					placeholder=''
+					name='headline'
+					type='text'
 					onChange={handleChange}
 				/>
 
 				<label>Review</label>
 				<textarea
-					className="input_field"
+					className='input_field'
 					value={form.commentary}
-					placeholder=""
-					name="commentary"
-					type="text"
+					placeholder=''
+					name='commentary'
+					type='text'
 					onChange={handleChange}
 				/>
 
 				<label>Rating</label>
 				<textarea
-					className="input_field"
+					className='input_field'
 					value={form.rating}
-					placeholder=""
-					name="rating"
-					type="text"
+					placeholder=''
+					name='rating'
+					type='text'
 					onChange={handleChange}
 				/>
 
-				<button className="review-button" id="create-review-button">
+				<button className='review-button' id='create-review-button'>
 					New Review
 				</button>
 			</form>

@@ -15,13 +15,13 @@ function Logout({ user, setUser }) {
 
 	console.log(user);
 	return (
-		<div className="logout">
+		<div className='logout'>
 			<div>
-				<img src={Logo} alt="logo" />
+				<img src={Logo} alt='logo' />
 			</div>
-			<div className="logout-check">
+			<div className='logout-check'>
 				<h1>Are you sure you want to log out?</h1>
-				<button className="logout-btn" onClick={handleLogoutClick}>
+				<button className='logout-btn' onClick={handleLogoutClick}>
 					Log Out
 				</button>
 			</div>

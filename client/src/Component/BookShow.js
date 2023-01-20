@@ -48,7 +48,7 @@ function BookShow({ user }) {
 			<h5>{book.published}</h5>
 			<h5>{book.page_count}</h5>
 			<p>{book.summary}</p>
-			<div className="review-card-container">
+			<div className='review-card-container'>
 				<CreateReviewForm book={book} setBook={setBook} user={user} />
 				{renderReviews(reviews)}
 			</div>

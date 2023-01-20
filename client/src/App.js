@@ -28,19 +28,19 @@ function App() {
 	console.log(user);
 	// console.log(books)
 	return (
-		<div className="App">
+		<div className='App'>
 			<Navigation user={user} />
 			<Routes>
-				<Route path="/" element={<LandingPage />} />
-				<Route path="/signup" element={<Signup onSignUp={setUser} />} />
-				<Route path="/login" element={<Login onLogin={setUser} />} />
+				<Route path='/' element={<LandingPage />} />
+				<Route path='/signup' element={<Signup onSignUp={setUser} />} />
+				<Route path='/login' element={<Login onLogin={setUser} />} />
 				<Route
-					path="/logout"
+					path='/logout'
 					element={<Logout user={user} setUser={setUser} />}
 				/>
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/home" element={<Home books={books} />} />
-				<Route path="/book/:id" element={<BookShow user={user} />} />
+				<Route path='/profile' element={<Profile />} />
+				<Route path='/home' element={<Home books={books} />} />
+				<Route path='/book/:id' element={<BookShow user={user} />} />
 			</Routes>
 		</div>
 	);

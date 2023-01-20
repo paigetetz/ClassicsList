@@ -46,67 +46,67 @@ function Signup({ onSignUp }) {
 	}
 
 	return (
-		<div className="signup-container">
+		<div className='signup-container'>
 			<h1>Sign up</h1>
-			<form class="signup-form" onSubmit={handleSubmit}>
-				<label htmlFor="username">Username</label>
+			<form class='signup-form' onSubmit={handleSubmit}>
+				<label htmlFor='username'>Username</label>
 				<input
-					type="text"
-					id="username"
-					autoComplete="off"
+					type='text'
+					id='username'
+					autoComplete='off'
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
 				/>
 
-				<label htmlFor="password">Password</label>
+				<label htmlFor='password'>Password</label>
 				<input
-					class="password"
-					type="password"
-					id="password"
+					class='password'
+					type='password'
+					id='password'
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					autoComplete="current-password"
+					autoComplete='current-password'
 				/>
 
-				<label htmlFor="password_confirmation">Password Confirmation</label>
+				<label htmlFor='password_confirmation'>Password Confirmation</label>
 				<input
-					class="password-confirmation"
-					type="password"
-					id="password_confirmation"
+					class='password-confirmation'
+					type='password'
+					id='password_confirmation'
 					value={passwordConfirmation}
 					onChange={(e) => setPasswordConfirmation(e.target.value)}
-					autoComplete="current-password"
+					autoComplete='current-password'
 				/>
 
-				<label htmlFor="profile_pic">Profile Picture URL</label>
+				<label htmlFor='profile_pic'>Profile Picture URL</label>
 				<input
-					class="profile-pic"
-					type="text"
-					id="profile_pic"
+					class='profile-pic'
+					type='text'
+					id='profile_pic'
 					value={profile_pic}
 					onChange={(e) => setProfilePic(e.target.value)}
 				/>
 
-				<label htmlFor="fav_book">Favorite Book</label>
+				<label htmlFor='fav_book'>Favorite Book</label>
 				<input
-					type="text"
-					id="fav_book"
+					type='text'
+					id='fav_book'
 					value={fav_book}
 					onChange={(e) => setFavBook(e.target.value)}
 				/>
 
-				<label htmlFor="fav_genre">Favorite Genre</label>
+				<label htmlFor='fav_genre'>Favorite Genre</label>
 				<input
-					type="text"
-					id="fav_genre"
+					type='text'
+					id='fav_genre'
 					value={fav_genre}
 					onChange={(e) => setFavGenre(e.target.value)}
 				/>
 
-				<button className="signup-btn" type="submit">
+				<button className='signup-btn' type='submit'>
 					{isLoading ? 'Loading...' : 'Sign Up'}
 				</button>
-				<Link to="/login">
+				<Link to='/login'>
 					<h5>Already have an account? Login here!</h5>
 				</Link>
 				{errors.map((err) => (
