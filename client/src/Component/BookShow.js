@@ -14,7 +14,7 @@ function BookShow({ user }) {
 				setBook({ ...data });
 			});
 	}, [id]);
-	console.log(book);
+	// console.log(book);
 	const reviews = book.reviews;
 	console.log(reviews);
 
@@ -22,7 +22,7 @@ function BookShow({ user }) {
 		const updateReviewArray = book.reviews.filter((review) => review.id !== id);
 		setBook({ ...book, reviews: updateReviewArray });
 	}
-	console.log(book.reviews);
+	// console.log(book.reviews);
 
 	function renderReviews(reviews) {
 		if (reviews) {
@@ -39,18 +39,24 @@ function BookShow({ user }) {
 	}
 
 	return (
-		<div>
-			<img src={book.image_url} alt={book.title} />
-			<h1>{book.title}</h1>
-			<h3>{book.author}</h3>
-			<h4>{book.average_review}/5</h4>
-			<h5>{book.genre}</h5>
-			<h5>{book.published}</h5>
-			<h5>{book.page_count}</h5>
-			<p>{book.summary}</p>
-			<div className='review-card-container'>
+		<div className='show-body'>
+			<div className='show-div'>
+				<div className='img-show-div'>
+					<img src={book.image_url} alt={book.title} />
+				</div>
+				<div className='info-show-div'>
+					<h1>{book.title}</h1>
+					<h3>{book.author}</h3>
+					<h4>{book.average_review}/5</h4>
+					<h5>Genre: {book.genre}</h5>
+					<h5>Original Publishing Date: {book.published}</h5>
+					<h5>{book.page_count} pages</h5>
+					<p>{book.summary}</p>
+				</div>
+			</div>
+			<div className='review-container'>
 				<CreateReviewForm book={book} setBook={setBook} user={user} />
-				{renderReviews(reviews)}
+				<div className='review-card-container'>{renderReviews(reviews)}</div>
 			</div>
 		</div>
 	);
