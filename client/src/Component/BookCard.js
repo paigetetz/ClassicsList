@@ -12,11 +12,11 @@ function BookCard({ book }) {
 				</div>
 				<div className="book-info">
 					<div className="book-text">
-						<h1>{book.title}</h1>
-						<h2>{book.author}</h2>
+						<h2>{book.title}</h2>
+						<h3>{book.author}</h3>
 						<p>{book.short}</p>
 					</div>
-					<div className="product-price-btn">
+					<div className="more_btn">
 						<p>{book.average_review}/5</p>
 						<Link to={`/book/${book.id}`}>
 							<button type="button">More Info</button>

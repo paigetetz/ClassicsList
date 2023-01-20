@@ -6,11 +6,15 @@ function Navigation({ user }) {
 			{user ? (
 				<div className="nav-bar">
 					<div>
-						<NavLink exact to="/home">
+						<NavLink className="navlink" exact to="/home">
 							Home
 						</NavLink>
-						<NavLink to="/profile">My Profile</NavLink>
-						<NavLink to="/logout">Logout</NavLink>
+						<NavLink className="navlink" to="/profile">
+							My Profile
+						</NavLink>
+						<NavLink className="navlink" to="/logout">
+							Logout
+						</NavLink>
 					</div>
 					<div className="profile_container">
 						<img
