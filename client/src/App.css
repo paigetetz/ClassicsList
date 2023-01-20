@@ -52,7 +52,7 @@ body {
   width: 100%;
   
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #5F8575;
   color: #F6F1EA;
 }
@@ -95,7 +95,7 @@ body {
   width: 100%;
   
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #5F8575;
   color: #F6F1EA;
 }
@@ -149,7 +149,7 @@ body {
   width: 100%;
   background-color: #C49D7D;
   color: #F6F1EA;
-  border-radius: 10px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -224,11 +224,13 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .wrapper {
+  background-color: #5F8575;
   height: 420px;
   width: 654px;
   margin: 50px;
-  border-radius: 7px 7px 7px 7px;
+  border-radius: 25px;
   /* VIA CSS MATIC https://goo.gl/cIbnS */
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -238,10 +240,10 @@ body {
   float: left;
   height: 420px;
   width: 327px;
-  border-radius: 7px;
+  border-radius: 25px;
 }
 .book-img img {
-  border-radius: 7px 0 0 7px;
+  border-radius: 25px;
   height: 420px; 
   width: 327px;
 }
@@ -249,7 +251,7 @@ body {
   float: left;
   height: 420px;
   width: 327px;
-  border-radius: 0 7px 10px 7px;
+  border-radius: 25px;
   background-color: #5F8575;
 }
 .book-text {
@@ -258,7 +260,7 @@ body {
 }
 .book-text h2 {
   margin: 0 0 0 38px;
-  padding-top: 2%;
+  padding-top: 3%;
   font-size: 34px;
   color: #F6F1EA;
 }
@@ -330,18 +332,48 @@ span {
 .more_btn button:hover {
   background-color: #C49D7D;
 }
+/* SHOW PAGE */
 
+.show-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.show-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: #5F8575;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 2%;
+}
+img-show-div{
+
+}
+.info-show-div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  color: #F6F1EA;
+  padding: 5%;
+}
 /* REVIEW FORM */
 .review-form{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 1350px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #5F8575;
   color: #F6F1EA;
+  margin-bottom: 2%;
 
 }
 .review-form textarea {
@@ -349,7 +381,7 @@ span {
   padding: 12px 20px;
   margin: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
   box-sizing: border-box;
   background-color: #F6F1EA;
 }
@@ -368,13 +400,18 @@ span {
 }
 
 /* REVIEW CARDS */
-.review-card-container {
+.review-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.review-card-container{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
 .review-card {
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   width: 500px;
   min-height: 200px;
@@ -383,7 +420,7 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
 }
