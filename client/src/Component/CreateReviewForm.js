@@ -43,7 +43,8 @@ function CreateReviewForm({ book, setBook, user }) {
 	};
 
 	return (
-		<div>
+		<div className='review-form-container'>
+			<h3>New Review</h3>
 			<form className='review-form' onSubmit={handleSubmit}>
 				<label>Title</label>
 				<textarea
@@ -76,7 +77,7 @@ function CreateReviewForm({ book, setBook, user }) {
 				/>
 
 				<button className='review-button' id='create-review-button'>
-					New Review
+					Submit
 				</button>
 			</form>
 		</div>

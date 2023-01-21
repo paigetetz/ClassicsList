@@ -399,6 +399,18 @@ img-show-div{
   padding: 5%;
 }
 /* REVIEW FORM */
+.review-form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 1350px;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: #5F8575;
+  color: #F6F1EA;
+  margin-bottom: 2%;
+}
 .review-form{
   display: flex;
   flex-direction: column;
@@ -428,7 +440,7 @@ img-show-div{
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 .review-button:hover {
