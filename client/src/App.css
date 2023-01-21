@@ -275,13 +275,13 @@ a:visited {
 .book-img {
   float: left;
   height: 420px;
-  width: 327px;
+  width: 300px;
   border-radius: 25px;
 }
 .book-img img {
   border-radius: 25px;
   height: 420px; 
-  width: 327px;
+  width: 300px;
 }
 .book-info {
   float: left;
