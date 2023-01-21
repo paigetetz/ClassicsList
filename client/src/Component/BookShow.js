@@ -50,8 +50,8 @@ function BookShow({ user }) {
 					<h4>{book.average_review}/5</h4>
 					<h5>Genre: {book.genre}</h5>
 					<h5>Original Publishing Date: {book.published}</h5>
-					<h5>{book.page_count} pages</h5>
-					<p>{book.summary}</p>
+					<h5>Pages: {book.page_count}</h5>
+					<p>Summary: {book.summary}</p>
 				</div>
 			</div>
 			<div className='review-container'>
