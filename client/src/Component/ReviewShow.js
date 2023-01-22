@@ -15,12 +15,12 @@ function ReviewShow() {
 	}, [id]);
 
 	return (
-		<div className='show'>
-			<div className='show-div'>
-				<div className='img-show-div'>
+		<div className='review-show'>
+			<div className='review-div'>
+				<div className='review-pic'>
 					<img src={review.profile_pic} alt={review.username} />
 				</div>
-				<div className='info-show-div'>
+				<div className='review-show-div'>
 					<h1>{review.headline}</h1>
 					<h3>{review.username}</h3>
 					<h4>{review.rating}/5</h4>
