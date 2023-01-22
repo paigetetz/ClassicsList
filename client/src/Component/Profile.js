@@ -1,5 +1,5 @@
 import ReviewCard from './ReviewCard.js';
-import BookCard from './BookCard.js';
+import MyBookCard from './MyBookCard.js';
 import React, { useEffect, useState } from 'react';
 function Profile() {
 	const [user, setUser] = useState({ reviews: [], books: [] });
@@ -16,7 +16,7 @@ function Profile() {
 	function renderBooks() {
 		if (myBooks.length > 0) {
 			return myBooks.map((book) => {
-				return <BookCard key={book.id} book={book} />;
+				return <MyBookCard key={book.id} book={book} />;
 			});
 		} else return <h3>No Books Yet!</h3>;
 	}

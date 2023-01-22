@@ -500,3 +500,17 @@ span {
   width: 20%;
   border-radius: 10px;
 }
+
+/* MY PROFILE */
+.my-book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #5F8575;
+  color: #F6F1EA;
+  height: 200px;
+  width: 300px;
+  margin: 8px;
+  border-radius: 25px;
+  padding: 20px;
+}
