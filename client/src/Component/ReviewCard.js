@@ -43,11 +43,8 @@ function ReviewCard({ review, handleDelete, user }) {
 			<h2>{review.headline}</h2>
 			<h6>By: {review.username}</h6>
 			<h6>A Review of {review.book_info}</h6>
-			<br></br>
 			<h4>{review.rating}/5</h4>
-			<br></br>
 			<p>{review.commentary}</p>
-			<br></br>
 			<h6>{review.likes} Likes</h6>
 			<button onClick={likeButton}>Like</button>
 			<button className='delete' onClick={() => deleteButton(review.id)}>

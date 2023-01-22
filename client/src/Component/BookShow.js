@@ -40,24 +40,24 @@ function BookShow({ user }) {
 
 	return (
 		<div className='show-body'>
-			<div className='show-div'>
-				<div className='img-show-div'>
-					<img src={book.image_url} alt={book.title} />
+			<div className='show'>
+				<div className='show-div'>
+					<div className='img-show-div'>
+						<img src={book.image_url} alt={book.title} />
+					</div>
+					<div className='info-show-div'>
+						<h1>{book.title}</h1>
+						<h3>{book.author}</h3>
+						<h4>{book.average_review}/5</h4>
+						<h5>Genre: {book.genre}</h5>
+						<h5>Originally Published: {book.published}</h5>
+						<h5>Pages: {book.page_count}</h5>
+						<p>Summary: {book.summary}</p>
+					</div>
 				</div>
-				<div className='info-show-div'>
-					<h1>{book.title}</h1>
-					<h3>{book.author}</h3>
-					<h4>{book.average_review}/5</h4>
-					<h5>Genre: {book.genre}</h5>
-					<h5>Original Publishing Date: {book.published}</h5>
-					<h5>Pages: {book.page_count}</h5>
-					<p>Summary: {book.summary}</p>
-				</div>
-			</div>
-			<div className='review-container'>
-				<CreateReviewForm book={book} setBook={setBook} user={user} />
 				<div className='review-card-container'>{renderReviews(reviews)}</div>
 			</div>
+			<CreateReviewForm book={book} setBook={setBook} user={user} />
 		</div>
 	);
 }
