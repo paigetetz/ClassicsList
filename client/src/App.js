@@ -7,7 +7,7 @@ import Signup from './Component/Signup';
 import Login from './Component/Login';
 import BookShow from './Component/BookShow';
 import Profile from './Component/Profile';
-
+import ReviewShow from './Component/ReviewShow';
 import Logout from './Component/Logout';
 import { Route, Routes } from 'react-router-dom';
 function App() {
@@ -26,6 +26,12 @@ function App() {
 		fetchData();
 	}, []);
 	console.log(user);
+	function handleDelete(id) {
+		const updateReviewArray = books.reviews.filter(
+			(review) => review.id !== id
+		);
+		setBooks(updateReviewArray);
+	}
 	// console.log(books)
 	return (
 		<div className='App'>
@@ -38,9 +44,13 @@ function App() {
 					path='/logout'
 					element={<Logout user={user} setUser={setUser} />}
 				/>
-				<Route path='/profile' element={<Profile />} />
+				<Route path='/profile' element={<Profile user={user} />} />
 				<Route path='/home' element={<Home books={books} />} />
 				<Route path='/book/:id' element={<BookShow user={user} />} />
+				<Route
+					path='/review/:id'
+					element={<ReviewShow handleDelete={handleDelete} />}
+				/>
 			</Routes>
 		</div>
 	);

@@ -107,7 +107,7 @@ function Signup({ onSignUp }) {
 					{isLoading ? 'Loading...' : 'Sign Up'}
 				</button>
 				<Link to='/login'>
-					<h5>Already have an account? Login here!</h5>
+					<h5 className='sure'>Already have an account? Login here!</h5>
 				</Link>
 				{errors.map((err) => (
 					<error key={err}>{err}</error>

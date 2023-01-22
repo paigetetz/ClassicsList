@@ -69,7 +69,7 @@ function Login({ onLogin }) {
 					{isLoading ? 'Loading...' : 'Login'}
 				</button>
 				<Link to='/signup'>
-					<h5>Need an account? Sign up here!</h5>
+					<h5 className='sure'>Need an account? Sign up here!</h5>
 				</Link>
 				{/* {errors.map((err) => (
                     <error key={err}>{err}</error>

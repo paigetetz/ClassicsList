@@ -1,9 +1,9 @@
-import ReviewCard from './ReviewCard.js';
-import BookCard from './BookCard.js';
+import MyReviewCard from './MyReviewCard.js';
+import MyBookCard from './MyBookCard.js';
 import React, { useEffect, useState } from 'react';
 function Profile() {
 	const [user, setUser] = useState({ reviews: [], books: [] });
-
+	const [showBooks, setShowBooks] = useState(false);
 	useEffect(() => {
 		fetch('/me')
 			.then((res) => res.json())
@@ -16,7 +16,7 @@ function Profile() {
 	function renderBooks() {
 		if (myBooks.length > 0) {
 			return myBooks.map((book) => {
-				return <BookCard key={book.id} book={book} />;
+				return <MyBookCard key={book.id} book={book} />;
 			});
 		} else return <h3>No Books Yet!</h3>;
 	}
@@ -26,25 +26,39 @@ function Profile() {
 	function renderReviews() {
 		if (myReviews.length > 0) {
 			return myReviews.map((review) => (
-				<ReviewCard key={review.id} review={review} />
+				<MyReviewCard key={review.id} review={review} />
 			));
 		} else return <h3>No Reviews Yet!</h3>;
+	}
+	function handleShowBooks() {
+		setShowBooks(!showBooks);
 	}
 
 	return (
 		<div className='profile'>
 			<div className='userContainer'>
-				<h1>Hello, {user.username}</h1>
-				<img
-					className='profile-image'
-					src={user.profile_pic}
-					alt={user.username}
-				/>
-				<h3>Favorite Book: {user.fav_book}</h3>
-				<h3>Favorite Genre: {user.fav_genre}</h3>
+				<div className='userInfo'>
+					<div className='profile-name'>
+						<img
+							className='profile-image'
+							src={user.profile_pic}
+							alt={user.username}
+						/>
+						<h1>{user.username}</h1>
+					</div>
+					<h3>Favorite Book: {user.fav_book}</h3>
+					<h3>Favorite Genre: {user.fav_genre}</h3>
+				</div>
+				<div className='myReviews'>
+					<h2>My Reviews</h2>
+					<br />
+					{renderReviews()}
+				</div>
 			</div>
-			<div className='myBooks'>{renderBooks()}</div>
-			<div className='myReviews'>{renderReviews()}</div>
+			<button className='show-books' onClick={handleShowBooks}>
+				My Books
+			</button>
+			{showBooks ? <div className='myBooks'>{renderBooks()}</div> : <div></div>}
 		</div>
 	);
 }
