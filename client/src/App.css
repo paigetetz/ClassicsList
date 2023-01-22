@@ -490,7 +490,7 @@ span {
   height: 300px;
   width: 600px;
   margin: 8px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 
 }
 
@@ -501,8 +501,8 @@ span {
   align-items: center;
 }
 .profile-image{
-  height: 30%;
-  width: 30%;
+  height: 25%;
+  width: 25%;
   border-radius: 50%;
   margin: 2%;
 }

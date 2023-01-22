@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 function ReviewCard({ review, handleDelete, user }) {
 	const [reviewData, setReviewData] = useState({ review });
@@ -42,14 +43,17 @@ function ReviewCard({ review, handleDelete, user }) {
 		<div className='review-card'>
 			<h2>{review.headline}</h2>
 			<h6>By: {review.username}</h6>
-			<h6>A Review of {review.book_info}</h6>
+
 			<h4>{review.rating}/5</h4>
-			<p>{review.commentary}</p>
+
 			<h6>{review.likes} Likes</h6>
 			<button onClick={likeButton}>Like</button>
 			<button className='delete' onClick={() => deleteButton(review.id)}>
 				Delete
 			</button>
+			<Link to={`/review/${review.id}`}>
+				<h5>Read More</h5>
+			</Link>
 		</div>
 	);
 }
