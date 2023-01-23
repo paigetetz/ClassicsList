@@ -7,7 +7,7 @@ User.destroy_all
 Review.destroy_all
 puts "Database Destroyed"
 
-puts "Seeding Select Users"
+# puts "Seeding Select Users"
 # User.create(username:"paigetetz", password:"1234", 
 # profile_pic:"http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg", fav_book: "The Book Theif", fav_genre: "Mystery")
 # User.create(username:"ohheycerimay", password:"1234", 
@@ -16,14 +16,36 @@ puts "Seeding Select Users"
 # profile_pic:"https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/69651319_10157171557082199_8810918459039809536_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=jO-M6xmJJyMAX9vara7&_nc_ht=scontent-ord5-2.xx&oh=00_AfAYNtFqoXjYtizXxCayHvpNFO-dssvCL6oTuuTC4FLDEg&oe=63E3FE9E",
 # fav_book: "Metamorphasis", fav_genre: "Thriller")
 
-puts "Select Users Seeded"
+# puts "Select Users Seeded"
 puts "Seeding random users"
 
+profile_pictures = [
+    "https://shotkit.com/wp-content/uploads/2021/06/cool-profile-pic-matheus-ferrero.jpeg",
+    "https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://www.fluentin3months.com/wp-content/uploads/2021/09/beautiful-spanish.jpg",
+    "https://media.architecturaldigest.com/photos/583dd282efb84d105bd03040/master/w_3000,h_2065,c_limit/Most%20Beautiful%20Streets%20Around%20the%20World%20-%204.jpg",
+    "https://media.istockphoto.com/id/1193218253/photo/hand-holding-heart-against-sparkling-golden-bokeh-lights.jpg?s=612x612&w=0&k=20&c=v4K3Figo4Kejx19tQ8DI0Uz9WPFtoJPF17fNF9dOP2k=",
+    "https://s3.amazonaws.com/media.thecurvyfashionista.com/wp-content/uploads/2018/11/10120134/Plus-Size-Fashion-Photographer-Rochelle-Brock-3.jpg",
+    "https://www.rockmywedding.co.uk/1200x1200/8716/5512/1020/lesbian-wedding.jpg?fit=1",
+    "https://img.freepik.com/premium-vector/pretty-hijab-woman-side-profile-with-colorful-flower-bouquet_185694-1105.jpg",
+    "https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/joelvalve-572557-unsplash.jpg",
+    "https://images.unsplash.com/photo-1583653319049-4db347571740?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8MTQwMTcxMnx8ZW58MHx8fHw%3D&w=1000&q=80",
+    "https://zipupandgo.com/wp-content/uploads/2021/06/travel-aesthetic-wallpaper-paris.jpg?ezimgfmt=ngcb2/notWebP",
+    "https://images.unsplash.com/photo-1673893775801-3e7e93beb9e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+    "https://images.unsplash.com/photo-1673323851582-69ed99ece463?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+    "https://images.unsplash.com/photo-1673394875583-25c21b00b4ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80",
+    "https://images.unsplash.com/photo-1622080574110-6c8b39e2d1de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
+    "https://images.unsplash.com/photo-1520471604-0b7189ca8fe6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80",
+    "https://images.unsplash.com/photo-1558253014-d90405579468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80",
+    "https://images.unsplash.com/photo-1674326931395-fab2610e2d10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=997&q=80",
+    "https://images.unsplash.com/photo-1674203150628-8976926b7fad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=964&q=80"
+
+]
 15.times do 
     User.create(
         username: Faker::Internet.user_name,
         password: "1234",
-        profile_pic: Faker::Avatar.image,
+        profile_pic: profile_pictures.sample,
         fav_book: Faker::Book.title,
         fav_genre: Faker::Book.genre
 
