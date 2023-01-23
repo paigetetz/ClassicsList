@@ -174,14 +174,12 @@ a:visited {
 .logout{
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 .logout-check{
-  height: 100%;
+  height: auto;
   width: 100%;
-  background-color: #C49D7D;
   color: #F6F1EA;
-  border-radius: 25px;
+  background-color: #C49D7D;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -190,16 +188,23 @@ a:visited {
 .logout-btn {
   width: 30%;
   background-color: #C49D7D;
+  font-size: medium;
   color: #F6F1EA;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Josefin Slab', serif;
 }
 .logout-btn:hover {
   background-color: #5F8575;
 }
+.not-yet:hover{
+  color: #5F8575;
+}
+
+
 
 /* NAVIGATION BAR */
 .profile_pic {
@@ -593,6 +598,9 @@ border-radius: 50%;
   margin: 8px;
   border-radius: 25px;
   padding: 20px;
+}
+.my-review-card:hover{
+  color: #5F8575;
 }
 .userContainer{
   display: flex;

@@ -28,15 +28,6 @@ function ReviewCard({ review, handleDelete, user }) {
 				Accept: 'application/json',
 			},
 		});
-
-		// const currentUserID = user.id;
-		// if (currentUserID === review.user_id) {
-		//     return (
-		//         <button className="delete" onClick={() => deleteButton(review.id)}>Delete</button>
-		//     );
-		// } else {
-		//     return <div></div>;
-		// }
 	}
 
 	return (
@@ -59,7 +50,7 @@ function ReviewCard({ review, handleDelete, user }) {
 					</button>
 				) : null}
 				<Link to={`/review/${review.id}`}>
-					<h5>Read More...</h5>
+					<h5 className='not-yet'>Read More...</h5>
 				</Link>
 			</div>
 		</div>
