@@ -501,6 +501,57 @@ span {
     justify-content: space-around;
     align-items: center;
 }
+.btn{
+  width: 30%;
+  background-color: #5F8575;
+  color: #F6F1EA;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+.btn:hover {
+  color:#C49D7D;
+}
+
+/* REVIEW SHOW */
+.review-show{
+  display: flex;
+  justify-content: center;
+}
+.review-div{
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  width: 85%;
+  background-color: #5F8575;
+  color: #F6F1EA;
+  border-radius: 25px;
+  padding: 40px;
+  margin: 2%;
+}
+.review-pic{
+height: 250px;
+width: 200px;
+border-radius: 50%;
+
+}
+.review-div-left{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2%;
+}
+.review-div-right{
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%
+}
+
 
 /* MY PROFILE PAGE */
 .profile{
@@ -519,11 +570,12 @@ span {
   flex-direction: row;
   align-items: center;
 }
-/* MY PROFILE */
+
 .myBooks{
   display: flex;
   flex-flow: row wrap;
   background-color: #C49D7D;
+  color: #F6F1EA;
   border-radius: 25px;
   padding: 30px;
   width: 70%;
@@ -569,19 +621,4 @@ span {
 }
 .show-btn:hover{
   background-color: #5F8575;
-}
-.btn{
-  width: 30%;
-  background-color: #5F8575;
-  color: #F6F1EA;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 60px;
-  cursor: pointer;
-}
-
-/* Form submit button on hover */
-.btn:hover {
-  color:#C49D7D;
 }

@@ -100,7 +100,7 @@ puts "Reviews seeding"
         user_id: User.all.sample.id,
         book_id: Book.all.sample.id,
         headline: Faker::Quote.famous_last_words,
-        commentary: Faker::Lorem.paragraph(sentence_count: 10),
+        commentary: Faker::Lorem.paragraph(sentence_count: 100),
         rating: rand(1..5),
         likes: rand(1..30)
 
