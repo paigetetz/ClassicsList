@@ -19,7 +19,7 @@ function ReviewShow() {
 			<div className='review-div'>
 				<div className='review-div-left'>
 					<h2>{review.headline}</h2>
-					<h3>{review.username}</h3>
+					<h3>By: {review.username}</h3>
 					<img
 						className='review-pic'
 						src={review.profile_pic}
