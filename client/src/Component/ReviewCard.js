@@ -53,9 +53,11 @@ function ReviewCard({ review, handleDelete, user }) {
 				<button className='btn' onClick={likeButton}>
 					Like
 				</button>
-				<button className='btn' onClick={() => deleteButton(review.id)}>
-					Delete
-				</button>
+				{user.id === review.user_id ? (
+					<button className='btn' onClick={() => deleteButton(review.id)}>
+						Delete
+					</button>
+				) : null}
 				<Link to={`/review/${review.id}`}>
 					<h5>Read More...</h5>
 				</Link>

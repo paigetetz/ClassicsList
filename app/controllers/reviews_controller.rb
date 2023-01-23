@@ -36,13 +36,12 @@ class ReviewsController < ApplicationController
 
     def destroy
         review = Review.find(params[:id])
-        if review
-            review.destroy
-            head :no_content
+        if review.user == @current_user
+        review.destroy
+        head :no_content
         else
-            render json: { errors: 'Review not found' }, status: :not_found
+        render json: { errors: 'Unauthorized' }, status: :unauthorized
         end
-
     end
 
     private
