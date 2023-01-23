@@ -472,9 +472,9 @@ span {
   align-items: center;
   overflow-y: scroll;
   width: 60%;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 25px;
-  background-color: #5F8575;
+  /* background-color: #5F8575; */
   margin: 2%;
   height: 800px;
 }
@@ -527,7 +527,7 @@ span {
   justify-content: center;
   height: 600px;
   width: 85%;
-  background-color: #5F8575;
+  background-color: #C49D7D;
   color: #F6F1EA;
   border-radius: 25px;
   padding: 40px;
@@ -612,6 +612,7 @@ border-radius: 50%;
   width: 80%;
 }
 .show-btn{
+  font-family: 'Josefin Slab', serif;
     width: 30%;
     background-color: #C49D7D;
     color: #F6F1EA;

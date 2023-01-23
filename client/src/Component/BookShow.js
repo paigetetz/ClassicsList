@@ -59,11 +59,14 @@ function BookShow({ user }) {
 						<p>Summary: {book.summary}</p>
 					</div>
 				</div>
-				<div className='review-card-container'>{renderReviews(reviews)}</div>
+				<div className='review-card-container'>
+					{renderReviews(reviews)}
+					<button className='show-btn' onClick={handleShowForm}>
+						New Review
+					</button>
+				</div>
 			</div>
-			<button className='show-btn' onClick={handleShowForm}>
-				New Review
-			</button>
+
 			{showForm ? (
 				<CreateReviewForm book={book} setBook={setBook} user={user} />
 			) : null}
