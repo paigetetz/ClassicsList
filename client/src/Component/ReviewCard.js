@@ -41,19 +41,25 @@ function ReviewCard({ review, handleDelete, user }) {
 
 	return (
 		<div className='review-card'>
-			<h2>{review.headline}</h2>
-			<h6>By: {review.username}</h6>
-
-			<h4>{review.rating}/5</h4>
-
-			<h6>{review.likes} Likes</h6>
-			<button onClick={likeButton}>Like</button>
-			<button className='delete' onClick={() => deleteButton(review.id)}>
-				Delete
-			</button>
-			<Link to={`/review/${review.id}`}>
-				<h5>Read More</h5>
-			</Link>
+			<div className='Rtop'>
+				<h3>{review.headline}</h3>
+				<h3>{review.rating}/5</h3>
+			</div>
+			<div className='Rbottom'>
+				<h4>By: {review.username}</h4>
+				<h6>{review.likes} Likes</h6>
+			</div>
+			<div className='btn-section'>
+				<button className='btn' onClick={likeButton}>
+					Like
+				</button>
+				<button className='btn' onClick={() => deleteButton(review.id)}>
+					Delete
+				</button>
+				<Link to={`/review/${review.id}`}>
+					<h5>Read More...</h5>
+				</Link>
+			</div>
 		</div>
 	);
 }

@@ -55,7 +55,7 @@ function Profile() {
 					{renderReviews()}
 				</div>
 			</div>
-			<button className='show-books' onClick={handleShowBooks}>
+			<button className='show-btn' onClick={handleShowBooks}>
 				My Books
 			</button>
 			{showBooks ? <div className='myBooks'>{renderBooks()}</div> : <div></div>}

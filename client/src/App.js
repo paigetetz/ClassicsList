@@ -26,12 +26,7 @@ function App() {
 		fetchData();
 	}, []);
 	console.log(user);
-	function handleDelete(id) {
-		const updateReviewArray = books.reviews.filter(
-			(review) => review.id !== id
-		);
-		setBooks(updateReviewArray);
-	}
+
 	// console.log(books)
 	return (
 		<div className='App'>
@@ -47,10 +42,7 @@ function App() {
 				<Route path='/profile' element={<Profile user={user} />} />
 				<Route path='/home' element={<Home books={books} />} />
 				<Route path='/book/:id' element={<BookShow user={user} />} />
-				<Route
-					path='/review/:id'
-					element={<ReviewShow handleDelete={handleDelete} />}
-				/>
+				<Route path='/review/:id' element={<ReviewShow />} />
 			</Routes>
 		</div>
 	);

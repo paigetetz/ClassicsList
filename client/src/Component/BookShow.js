@@ -4,6 +4,7 @@ import ReviewCard from './ReviewCard';
 import CreateReviewForm from './CreateReviewForm';
 function BookShow({ user }) {
 	const [book, setBook] = useState([]);
+	const [showForm, setShowForm] = useState(false);
 
 	const { id } = useParams();
 
@@ -37,6 +38,9 @@ function BookShow({ user }) {
 			));
 		} else return <div></div>;
 	}
+	function handleShowForm() {
+		setShowForm(!showForm);
+	}
 
 	return (
 		<div className='show-body'>
@@ -57,7 +61,12 @@ function BookShow({ user }) {
 				</div>
 				<div className='review-card-container'>{renderReviews(reviews)}</div>
 			</div>
-			<CreateReviewForm book={book} setBook={setBook} user={user} />
+			<button className='show-btn' onClick={handleShowForm}>
+				New Review
+			</button>
+			{showForm ? (
+				<CreateReviewForm book={book} setBook={setBook} user={user} />
+			) : null}
 		</div>
 	);
 }
