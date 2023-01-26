@@ -14,6 +14,21 @@ function ReviewShow() {
 			});
 	}, [id]);
 
+	function likeButton() {
+		fetch(`/reviews/${review.id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+				Accept: 'application/json',
+			},
+			body: JSON.stringify({ likes: ++review.likes }),
+		})
+			.then((r) => r.json())
+			.then((data) => {
+				setReview({ ...data });
+			});
+	}
+
 	return (
 		<div className='review-show'>
 			<div className='review-div'>
@@ -31,6 +46,9 @@ function ReviewShow() {
 				<div className='review-div-right'>
 					<h2>{review.rating}/5</h2>
 					<p>Review: {review.commentary}</p>
+					<button className='btn' onClick={likeButton}>
+						Like
+					</button>
 				</div>
 			</div>
 		</div>

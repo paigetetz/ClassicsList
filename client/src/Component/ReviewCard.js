@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 function ReviewCard({ review, handleDelete, user }) {
-	const [reviewData, setReviewData] = useState({ review });
+	// const [reviewData, setReviewData] = useState({ review });
 
 	// console.log(review.user.username)
-	function likeButton() {
-		fetch(`/reviews/${review.id}`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json',
-				Accept: 'application/json',
-			},
-			body: JSON.stringify({ likes: ++review.likes }),
-		})
-			.then((r) => r.json())
-			.then((data) => {
-				setReviewData({ ...data });
-			});
-	}
+	// function likeButton() {
+	// 	fetch(`/reviews/${review.id}`, {
+	// 		method: 'PATCH',
+	// 		headers: {
+	// 			'Content-Type': 'application/json',
+	// 			Accept: 'application/json',
+	// 		},
+	// 		body: JSON.stringify({ likes: ++review.likes }),
+	// 	})
+	// 		.then((r) => r.json())
+	// 		.then((data) => {
+	// 			setReviewData({ ...data });
+	// 		});
+	// }
 	function deleteButton(id) {
 		handleDelete(id);
 		fetch(`/reviews/${review.id}`, {
@@ -41,9 +41,9 @@ function ReviewCard({ review, handleDelete, user }) {
 				<h6>{review.likes} Likes</h6>
 			</div>
 			<div className='btn-section'>
-				<button className='btn' onClick={likeButton}>
+				{/* <button className='btn' onClick={likeButton}>
 					Like
-				</button>
+				</button> */}
 				{user.id === review.user_id ? (
 					<button className='btn' onClick={() => deleteButton(review.id)}>
 						Delete
