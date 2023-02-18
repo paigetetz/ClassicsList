@@ -9,7 +9,6 @@ function Login({ onLogin }) {
 	const [isLoading, setIsLoading] = useState(false);
 
 	let navigate = useNavigate();
-	console.log(onLogin);
 
 	function handleSubmit(e) {
 		e.preventDefault();
